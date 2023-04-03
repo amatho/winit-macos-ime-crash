@@ -15,6 +15,8 @@ fn main() {
     thread::spawn(move || {
         // Wait for event loop to initialize
         thread::sleep(Duration::from_secs(1));
+
+        // This crashes the program on macOS
         window.set_ime_position(LogicalPosition::new(42, 42));
     });
 
